@@ -1,14 +1,16 @@
 import fetch from 'node-fetch';
 
-const response = await fetch("http://makeup-api.herokuapp.com/api/v1/products.json");
-const makeup = await response.json();
-//console.log(makeup);
+import fs from 'fs';
 
-const car = "Toyota";
-const carDetail = `Car detail: ${car}`;
-console.log(carDetail);
+// Caminho do arquivo JSON local
+const caminhoDoArquivo = 'products.json';
 
-/*
-for (let make of makeup){
-    console.log(make);
-}*/
+axios.get(`file://${caminhoDoArquivo}`)
+.then(response => {
+  // Manipula a resposta JSON
+  console.log(response.data);
+})
+.catch(error => {
+  // Trata erros
+  console.error('Erro ao obter o arquivo JSON:', error);
+});

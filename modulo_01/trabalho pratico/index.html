@@ -16,23 +16,23 @@
       <form class="catalog-control">
         <div class="form-control">
           <label for="filter-name">Nome:</label>
-          <input type="text" id="filter-name" />
+          <input type="text" id="filter-name" onkeyup="MostraFiltros()" />
         </div>
         <div class="form-control">
           <label for="filter-brand">Marca:</label>
-          <select id="filter-brand" class="MostraMarca">
-            <option value="">Todos</option>            
+          <select id="filter-brand" class="MostraMarca" onchange="MostraFiltros()">
+            <option value="todos">Todos</option>            
           </select>
         </div>
         <div class="form-control">
           <label for="filter-type">Tipo:</label>
-          <select id="filter-type">
-            <option value="">Todos</option>
+          <select id="filter-type" class="MostraTipo" onchange="MostraFiltros()">
+            <option value="todos">Todos</option>
           </select>
         </div>
         <div class="form-control">
           <label for="sort"></label>
-          <select id="sort-type" onchange="ordena(this.value);">
+          <select id="sort-type" onchange="ordena();">
             <option value="1">Melhor Avaliados</option>
             <option value="2">Menores Preços</option>
             <option value="3">Maiores Preços</option>
